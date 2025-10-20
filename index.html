@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Ulang Tahun, Ria 🎂💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #ffe3e3, #fff6e0, #e3ffd9);
+      background-image: url('https://www.transparenttextures.com/patterns/soft-wallpaper.png');
+      overflow-x: hidden;
+      color: #333;
+      user-select: none;
+    }
+
+    h1, h3, h5, p { margin: 0; }
+
+    .container {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo {
+      margin-top: 40px;
+      position: relative;
+    }
+
+    .photo img {
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      width: 260px;
+      height: auto;
+      animation: floatPhoto 3s ease-in-out infinite;
+    }
+
+    @keyframes floatPhoto {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .cake {
+      width: 180px;
+      margin: 40px auto;
+      position: relative;
+      cursor: pointer;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .candles {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .flame {
+      width: 10px;
+      height: 20px;
+      background: radial-gradient(circle, #ffdf7e 40%, #ffb347 60%);
+      border-radius: 50%;
+      margin: 0 3px;
+      display: inline-block;
+      animation: flicker 0.3s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { transform: scaleY(1); opacity: 1; }
+      100% { transform: scaleY(0.7); opacity: 0.7; }
+    }
+
+    .wish {
+      color: #ff6699;
+      text-shadow: 0 2px 8px rgba(255, 100, 150, 0.5);
+      font-size: 2em;
+      margin-top: 30px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .balloon {
+      width: 60px;
+      height: 80px;
+      background: radial-gradient(circle at 30% 30%, #fff 10%, #ffb6c1 70%);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      position: absolute;
+      bottom: -100px;
+      animation: floatUp 8s ease-in-out infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+      100% { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+    }
+
+    .cloud {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 60px 30px white, 120px 20px white, 180px 40px white;
+      opacity: 0.9;
+      animation: cloudMove 40s linear infinite;
+    }
+
+    @keyframes cloudMove {
+      from { left: -200px; }
+      to { left: 110vw; }
+    }
+
+    .heart {
+      position: fixed;
+      font-size: 20px;
+      animation: heartFloat 3s ease-in forwards;
+    }
+
+    @keyframes heartFloat {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120px) scale(1.8); opacity: 0; }
+    }
+
+    button {
+      background: #ff8fab;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 25px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+
+    button:hover { transform: scale(1.1); background: #ff6388; }
+
+    /* Surat cinta */
+    .letter {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: #fff5f8;
+      border-radius: 10px;
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: transform 0.5s ease;
+      z-index: 10;
+    }
+
+    .letter.show {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .hug {
+      font-size: 3rem;
+      margin-top: 10px;
+      animation: hugPop 1s ease forwards;
+    }
+
+    @keyframes hugPop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Selamat Ulang Tahun, Ria Oktavia Saputri! 🎉💝</h1>
+    <p class="wish">Semoga kamu selalu bahagia dan tersenyum manis setiap hari 💕</p>
+
+    <div class="photo">
+      <img src="ria.jpg" alt="Ria" />
+    </div>
+
+    <div class="cake" id="cake">
+      <div class="candles">
+        <div class="flame"></div>
+        <div class="flame"></div>
+        <div class="flame"></div>
+      </div>
+      <img src="cake.png" alt="Cake" width="180" />
+    </div>
+
+    <button id="confettiBtn">🎊 Rayakan Lagi!</button>
+  </div>
+
+  <div class="cloud" style="width: 150px; height: 60px; top: 20vh;"></div>
+  <div class="cloud" style="width: 200px; height: 70px; top: 50vh; animation-delay: 10s;"></div>
+
+  <audio id="music" src="hbd.mpeg" loop></audio>
+
+  <div class="letter" id="letter">
+    <h3>💌 Untuk Ria</h3>
+    <p>Kamu itu seperti cokelat hangat di pagi hari — manis, lembut, dan bikin aku bahagia setiap kali melihatmu 🍓</p>
+    <div class="hug">🤗💞🤗</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const confettiBtn = document.getElementById('confettiBtn');
+    const music = document.getElementById('music');
+    const cake = document.getElementById('cake');
+    const letter = document.getElementById('letter');
+
+    function launchConfetti() {
+      for (let i = 0; i < 5; i++) {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+        });
+      }
+    }
+
+    confettiBtn.addEventListener('click', () => {
+      launchConfetti();
+      if (music.paused) music.play();
+    });
+
+    // Klik kue untuk surat cinta
+    cake.addEventListener('click', () => {
+      letter.classList.add('show');
+      launchConfetti();
+      setTimeout(() => {
+        letter.classList.remove('show');
+      }, 7000);
+    });
+
+    // Balon
+    for (let i = 0; i < 10; i++) {
+      const b = document.createElement('div');
+      b.classList.add('balloon');
+      b.style.left = Math.random() * 100 + 'vw';
+      b.style.animationDelay = Math.random() * 8 + 's';
+      b.style.background = `radial-gradient(circle at 30% 30%, #fff 10%, hsl(${Math.random()*360}, 70%, 75%) 70%)`;
+      document.body.appendChild(b);
+    }
+
+    // Hati melayang
+    document.body.addEventListener('click', (e) => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '💖';
+      heart.style.left = e.pageX + 'px';
+      heart.style.top = e.pageY + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 3000);
+    });
+  </script>
+</body>
+</html>
